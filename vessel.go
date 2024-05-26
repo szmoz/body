@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 type Vessel struct {
 	name               string
 	capacity           int
@@ -45,6 +43,5 @@ func (v *Vessel) lungsBloodProcess() {
 	v.lastProcessedBlood = <-v.prevChannel
 	v.lastProcessedBlood.PO2 = 100
 	v.lastProcessedBlood.PCO2 = 40
-	fmt.Println(v.lastProcessedBlood)
 	v.bloodChannel <- v.lastProcessedBlood
 }
